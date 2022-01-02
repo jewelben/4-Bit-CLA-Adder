@@ -1,0 +1,81 @@
+.include TSMC_180nm.txt
+.include and2.subs
+.include and3.subs
+.include and4.subs
+.include and5.subs
+.include or2.subs
+.include or3.subs
+.include or4.subs
+.include or5.subs
+.include xor2.subs
+
+.param Supply=1.8
+.param LAMBDA=0.09u
+.param width_N=10*LAMBDA
+.param width_P=20*LAMBDA
+.global vdd gnd
+
+VDS vdd gnd Supply
+
+.param logic1 = Supply
+.param logic0 = 0
+
+* A = a3a2a1a0
+VA0 a0 gnd pulse logic0 logic1 0ns 100ps 100ps 39.9ns 80ns
+VA1 a1 gnd pulse logic1 logic0 0ns 100ps 100ps 9.9ns 20ns
+VA2 a2 gnd pulse logic1 logic0 0ns 100ps 100ps 19.9ns 40ns
+VA3 a3 gnd pulse logic0 logic1 0ns 100ps 100ps 19.9ns 40ns
+
+* B = b3b2b1b0
+VB0 b0 gnd pulse logic1 logic0 0ns 100ps 100ps 39.9ns 80ns
+VB1 b1 gnd pulse logic0 logic1 0ns 100ps 100ps 19.9ns 40ns
+VB2 b2 gnd pulse logic0 logic1 0ns 100ps 100ps 9.9ns 20ns
+VB3 b3 gnd pulse logic1 logic0 0ns 100ps 100ps 9.9ns 20ns
+
+VC0 Cin gnd pulse logic1 logic0 0ns 100ps 100ps 19.9ns 40ns
+
+xxPROP0 p0 a0 b0 xor2
+xxPROP1 p1 a1 b1 xor2
+xxPROP2 p2 a2 b2 xor2
+xxPROP3 p3 a3 b3 xor2
+
+xxGEN0 g0 a0 b0 and2
+xxGEN1 g1 a1 b1 and2
+xxGEN2 g2 a2 b2 and2
+xxGEN3 g3 a3 b3 and2
+
+xxANDcalc0 temp0 Cin p0 and2
+xxORcalc0 c0 temp0 g0 or2
+
+xxANDcalc11 temp11 Cin p0 p1 and3
+xxANDcalc12 temp12 g0 p1 and2
+xxORcalc1 c1 temp12 temp11 g1 or3
+
+xxANDcalc21 temp21 Cin p0 p1 p2 and4
+xxANDcalc22 temp22 g0 p1 p2 and3
+xxANDcalc23 temp23 g1 p2 and2
+xxORcalc2 c2 temp23 temp22 temp21 g2 or4
+
+xxANDcalc31 temp31 Cin p0 p1 p2 p3 and5
+xxANDcalc32 temp32 g0 p1 p2 p3 and4
+xxANDcalc33 temp33 g1 p2 p3 and3
+xxANDcalc34 temp34 g2 p3 and2
+xxOR3 c3 temp34 temp33 temp32 temp31 g3 or5
+
+xxSUM0 sum0 p0 Cin xor2
+xxSUM1 sum1 p1 c0 xor2
+xxSUM2 sum2 p2 c1 xor2
+xxSUM3 sum3 p3 c2 xor2
+
+.tran 0.05n 160n
+
+.control
+run
+
+set color0 = white
+set color1 = black
+plot (v(sum0)+(2*v(sum1))+(4*v(sum2))+(8*v(sum3))+(16*v(c3)))/1.8 v(Cin)/1.8 (v(a0)+(2*v(a1))+(4*v(a2))+(8*v(a3)))/1.8 (v(b0)+(2*v(b1))+(4*v(b2))+(8*v(b3)))/1.8
+
+set curplottitle = "Jewel Benny, 2020102057"
+.endc
+.end

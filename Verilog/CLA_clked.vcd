@@ -1,0 +1,150 @@
+$date
+	Fri Dec 03 12:52:12 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module CLA_clked_testbench $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " Cout $end
+$var reg 1 # CLK $end
+$var reg 1 $ Cin $end
+$var reg 4 % a [3:0] $end
+$var reg 4 & b [3:0] $end
+$scope module abc $end
+$var wire 1 # CLK $end
+$var wire 1 $ Cin $end
+$var wire 4 ' a [3:0] $end
+$var wire 4 ( b [3:0] $end
+$var wire 4 ) D_sum [3:0] $end
+$var wire 1 * D_Cout $end
+$var reg 1 " Cout $end
+$var reg 4 + Q_a [3:0] $end
+$var reg 4 , Q_b [3:0] $end
+$var reg 4 - sum [3:0] $end
+$scope module abc $end
+$var wire 1 $ Cin $end
+$var wire 4 . a [3:0] $end
+$var wire 4 / b [3:0] $end
+$var reg 1 * Cout $end
+$var reg 4 0 carry [3:0] $end
+$var reg 4 1 g [3:0] $end
+$var reg 4 2 p [3:0] $end
+$var reg 4 3 sum [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+x*
+bx )
+b0 (
+b0 '
+b0 &
+b0 %
+0$
+0#
+x"
+bx !
+$end
+#10000
+b110 )
+b110 3
+0*
+b11 0
+b1 2
+b10 1
+b10 ,
+b10 /
+b11 +
+b11 .
+1#
+1$
+b10 &
+b10 (
+b11 %
+b11 '
+#20000
+0#
+#30000
+b1111 )
+b1111 3
+1*
+b1111 0
+b0 2
+b1111 1
+0"
+b110 !
+b110 -
+b1111 ,
+b1111 /
+b1111 +
+b1111 .
+1#
+b1111 &
+b1111 (
+b1111 %
+b1111 '
+#40000
+0#
+#50000
+0*
+b101 0
+b101 1
+b101 ,
+b101 /
+b101 +
+b101 .
+1"
+b1110 !
+b1110 -
+b1010 )
+b1010 3
+1#
+0$
+b101 &
+b101 (
+b101 %
+b101 '
+#60000
+0#
+#70000
+1*
+b1111 0
+b1110 2
+b1 1
+0"
+b1011 !
+b1011 -
+b1 ,
+b1 /
+b1111 +
+b1111 .
+b1 )
+b1 3
+1#
+1$
+b1 &
+b1 (
+b1111 %
+b1111 '
+#80000
+0#
+#90000
+1"
+b1 !
+b1 -
+1#

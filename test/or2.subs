@@ -1,0 +1,18 @@
+* 2 Input OR gate
+.subckt or2 OUT A B
+
+* PUN
+M1 node1 A VDD VDD CMOSP W={width_P} L={LAMBDA} 
+M2 NOR B node1 VDD CMOSP W={width_P} L={LAMBDA} 
+
+
+M3 NOR A GND Gnd CMOSN W={width_N} L={LAMBDA} 
+M4 GND B NOR Gnd CMOSN W={width_N} L={LAMBDA} 
+
+M5 OUT NOR VDD VDD CMOSP W={width_P} L={LAMBDA} 
+M6 OUT NOR GND GND CMOSN W={width_N} L={LAMBDA} 
+
+
+.ends
+
+

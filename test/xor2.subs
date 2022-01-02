@@ -1,0 +1,27 @@
+* 2 Input XOR gate
+.subckt xor2 OUT A B
+
+M1 Anot A VDD VDD CMOSP W={width_P} L={LAMBDA} 
+
+M2 Anot A GND GND CMOSN W={width_N} L={LAMBDA} 
+
+M3 Bnot B VDD VDD CMOSP W={width_P} L={LAMBDA} 
+
+M4 Bnot B GND GND CMOSN W={width_N} L={LAMBDA} 
+
+M5 node1 A VDD VDD CMOSP W={width_P} L={LAMBDA} 
+
+M6 OUT Bnot node1 VDD CMOSP W={width_P} L={LAMBDA} 
+
+M7 VDD Anot node2 VDD CMOSP W={width_P} L={LAMBDA} 
+
+M8 node2 B OUT VDD CMOSP W={width_P} L={LAMBDA} 
+
+M9 GND Anot node3 Gnd CMOSN W={width_N} L={LAMBDA} 
+
+M10 node3 Bnot OUT Gnd CMOSN W={width_N} L={LAMBDA} 
+M11 OUT B node4 Gnd CMOSN W={width_N} L={LAMBDA} 
+M12 node4 A GND Gnd CMOSN W={width_N} L={LAMBDA} 
+
+.ends
+

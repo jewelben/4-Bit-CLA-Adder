@@ -1,0 +1,12 @@
+* 2 Input AND gate
+.subckt and2 OUT A B
+
+* PUN
+M1 nand A VDD VDD CMOSP W={width_P} L={LAMBDA} 
+M2 nand B VDD VDD CMOSP W={width_P} L={LAMBDA} 
+M3 node1 A GND Gnd CMOSN W={width_N} L={LAMBDA} 
+M4 nand B node1 Gnd CMOSN W={width_N} L={LAMBDA} 
+M5 OUT nand VDD VDD CMOSP W={width_P} L={LAMBDA} 
+M6 OUT nand GND Gnd CMOSN W={width_N} L={LAMBDA} 
+
+.ends

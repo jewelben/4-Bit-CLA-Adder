@@ -1,0 +1,42 @@
+* SPICE3 file created from 2andt.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 VDD B a_13_5# w_0_n1# pfet w=6 l=2
++  ad=96 pd=68 as=48 ps=28
+M1001 OUT a_13_5# GND Gnd nfet w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1002 a_13_5# A VDD w_0_n1# pfet w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 OUT a_13_5# VDD w_43_n1# pfet w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1004 a_13_5# B a_13_n25# Gnd nfet w=4 l=2
++  ad=24 pd=20 as=32 ps=24
+M1005 a_13_n25# A GND Gnd nfet w=4 l=2
+
+
++  ad=0 pd=0 as=0 ps=0
+C0 a_13_5# GND 0.02fF
+C1 a_13_5# OUT 0.05fF
+C2 B w_0_n1# 0.08fF
+C3 w_0_n1# A 0.08fF
+C4 a_13_5# w_0_n1# 0.02fF
+C5 B A 0.23fF
+C6 a_13_5# w_43_n1# 0.08fF
+C7 B a_13_5# 0.17fF
+C8 a_13_5# A 0.04fF
+C9 VDD OUT 0.06fF
+C10 OUT GND 0.06fF
+C11 VDD w_0_n1# 0.06fF
+C12 VDD w_43_n1# 0.03fF
+C13 OUT w_43_n1# 0.03fF
+C14 B GND 0.03fF
+C15 a_13_5# VDD 0.09fF
+C16 GND Gnd 0.26fF
+C17 OUT Gnd 0.11fF
+C18 VDD Gnd 0.28fF
+C19 a_13_5# Gnd 0.37fF
+C20 B Gnd 0.27fF
+C21 A Gnd 0.25fF
+C22 w_43_n1# Gnd 0.43fF
+C23 w_0_n1# Gnd 0.67fF

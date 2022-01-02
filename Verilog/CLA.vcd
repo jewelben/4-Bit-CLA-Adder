@@ -1,0 +1,143 @@
+$date
+	Mon Dec  6 15:21:43 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module CLA_testbench $end
+$var wire 4 ! sum [3:0] $end
+$var wire 4 " carry [3:0] $end
+$var reg 1 # Cin $end
+$var reg 4 $ a [3:0] $end
+$var reg 4 % b [3:0] $end
+$scope module abc $end
+$var wire 1 # Cin $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 ( w0 $end
+$var wire 1 ) w11 $end
+$var wire 1 * w12 $end
+$var wire 1 + w21 $end
+$var wire 1 , w22 $end
+$var wire 1 - w23 $end
+$var wire 1 . w31 $end
+$var wire 1 / w32 $end
+$var wire 1 0 w33 $end
+$var wire 1 1 w34 $end
+$var wire 4 2 sum [3:0] $end
+$var wire 4 3 p [3:0] $end
+$var wire 4 4 g [3:0] $end
+$var wire 4 5 carry [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 5
+b0 4
+b0 3
+b0 2
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+b0 '
+b0 &
+b0 %
+b0 $
+0#
+b0 "
+b0 !
+$end
+#10000
+b110 "
+b110 5
+1-
+b1000 !
+b1000 2
+b10 4
+b100 3
+b10 %
+b10 '
+b110 $
+b110 &
+#30000
+b10 "
+b10 5
+0-
+b1101 !
+b1101 2
+b1001 3
+b1010 %
+b1010 '
+b11 $
+b11 &
+#50000
+b1011 "
+b1011 5
+b1010 4
+b1 3
+1(
+b110 !
+b110 2
+1#
+b1011 $
+b1011 &
+#70000
+b0 "
+b0 5
+b0 4
+b0 3
+0(
+b0 !
+b0 2
+0#
+b0 %
+b0 '
+b0 $
+b0 &
+#90000
+b1 "
+b1 5
+1(
+b1001 3
+b1010 !
+b1010 2
+1#
+b1001 $
+b1001 &
+#110000
+0(
+b1111 !
+b1111 2
+b1111 "
+b1111 5
+b0 3
+b1111 4
+b1111 %
+b1111 '
+b1111 $
+b1111 &
+#130000
+1-
+b110 "
+b110 5
+b100 3
+b10 4
+b1000 !
+b1000 2
+0#
+b10 %
+b10 '
+b110 $
+b110 &
+#150000
